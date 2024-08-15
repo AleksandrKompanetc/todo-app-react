@@ -5,11 +5,12 @@ const CreateTodoField = ({setTodos}) => {
   const [title, setTitle] = useState('');
 
   const addTodo = (title) => {
-    setTodos([{
+    setTodos(prev => [{
       _id: new Date(),
       title,
       isCompleted: false,
-    }, ...todos])
+    }, ...prev])
+    setTitle('');
   }
 
   return (
